@@ -1,12 +1,11 @@
 package com.soit23.enterprise;
 
 
-import com.soit23.enterprise.model.Faculty;
+import com.soit23.enterprise.entity.Faculty;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
