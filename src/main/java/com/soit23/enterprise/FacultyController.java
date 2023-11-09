@@ -32,13 +32,16 @@ public class FacultyController {
 
         //Add faculties to the Spring Model
         theModel.addAttribute("faculties", theFaculties);
-        return "list-faculties";
+        return "faculties/list-faculties";
 
     }
 
 
     @GetMapping("/viewAddForm")
     public String viewAddForm(Model theModel){
+
+        //Model attribute for the data binding
+        Faculty theFaculty = new Faculty();
 
         theModel.addAttribute("faculty", theFaculty);
         return "faculties/faculty-form";
