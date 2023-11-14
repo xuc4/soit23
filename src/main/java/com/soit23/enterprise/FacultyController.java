@@ -5,10 +5,7 @@ import com.soit23.enterprise.entity.Faculty;
 import com.soit23.enterprise.service.FacultyService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -45,6 +42,20 @@ public class FacultyController {
 
         theModel.addAttribute("faculty", theFaculty);
         return "faculties/faculty-form";
+    }
+    
+    @GetMapping("/viewUpdateForm")
+    public String viewUpdateForm(@RequestParam("facultyId") int theId, Model theModel) {
+        
+        //Retrieve the faculty info from the service layer
+        Faculty theFaculty = facultyService.findById(theId);
+        
+        //Pre-populate the form by setting the faculty as a model attribute
+        theModel.addAttribute("faculty", theFaculty);
+
+        //Redirect us to the faculty form
+        return "faculties/faculty-form";
+        
     }
 
     @PostMapping("/save")
