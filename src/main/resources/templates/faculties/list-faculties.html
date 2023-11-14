@@ -43,6 +43,10 @@
             <a th:href="@{/Faculties/viewUpdateForm(facultyId=${theFaculty.id})}"
                class="btn btn-danger btn-sm">Update</a>
 
+            <!--Delete Button-->
+            <a th:href="@{/Faculties/delete(facultyId=${theFaculty.id})}"
+               class="btn btn-danger btn-sm"onclick="if (!(confirm('To confirm Deletion, please Click Delete; otherwise, click Cancel'))) return false">Delete</a>
+
         </td>
 
     </tr>
